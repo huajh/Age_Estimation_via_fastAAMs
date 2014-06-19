@@ -2,14 +2,14 @@ Age_Estimation_via_fastAAMs
 ===========================
 machine learning homework: Age Estimation
 
-#Project#
+Project
+.....
 
 	Age Estimation based on Support Vector Regression	
 
 
 Code Description
-=================
-
+-------
 the function interface (ageestimation.m): 
 
 	[ pred_age ] = ageestimation( image )  
@@ -39,7 +39,7 @@ http://www.mathworks.com/matlabcentral/fileexchange/44651-active-appearance-mode
 [3] Khoa Luu, Karl Ricanek, Tien D Bui, and Ching Y Suen. Age estimation using active appearance models and support vector machine regression. In Biometrics: Theory, Applications, and Systems, 2009. BTAS’09. IEEE 3rd International Conference on, pages 1–5.IEEE, 2009.
 
 DATASET: MORPH
---------------
+------
 
 Ricanek, Karl, and Tamirat Tesafaye. "Morph: A longitudinal image database of normal adult age-progression." Automatic Face and Gesture Recognition, 2006. FGR 2006. 7th International Conference on. IEEE, 2006.
 
