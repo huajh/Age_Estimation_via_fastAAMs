@@ -3,10 +3,10 @@ if_hist_age = 0;
 if_partition_dataset = 0;
 if_knntrain = 0;
 if_knntest = 0;
-if_svmtrain =0;
-if_svmtest = 0;
+if_svmtrain =1;
+if_svmtest = 1;
 if_svm_mixed = 0;
-if_test_image = 1;
+if_test_image = 0;
 
 addpath funtions;
 
@@ -101,14 +101,15 @@ if if_svmtrain == 1
         old_svr   = svmtrain(trainage(old_idx),trainfeatures(old_idx,:),'-s 3 -t 2');    
         save('svm_model.mat','classify_svm','child_svr','adult_svr','old_svr');
     else
-        tic
+        tic;
         svr_model = svmtrain(trainage,trainfeatures,'-s 3 -t 2 -h 0');
-        toc
-        save('svr_rbf_model.mat','svr_model');
+        toc;
+        %save('svr_poly_model0.mat','svr_model');
+        save('svr_rbf_model0.mat','svr_model');
     end
 else 
-    load('svr_rbf_model.mat');
-    %load('svr_poly_model.mat');
+    load('svr_rbf_model0.mat');
+    %load('svr_poly_model0.mat');
 end
 
 if if_svmtest == 1
@@ -140,20 +141,22 @@ if if_svmtest == 1
         pred_age =svmpredict(testage,testfeatures,svr_model); 
         toc;
     end
-    
-    error = abs(pred_age-testage);
+    testage0 = round(testage);
+    error = abs(pred_age-testage0);
     MAE = mean(error);
     fprintf('mean_abs_error: %.2f\n',MAE);
-    hist(error,20);
+    nn = hist(error,max(error)-min(error)+1);
+    cuml_score = cumsum(nn)/sum(nn);
+    plot(0:length(cuml_score)-1,cuml_score);
     title(['MAE = ',num2str(MAE)]);
-   % save('svr_poly_Error.mat','error','MAE');
-    save('svr_rbf_Error.mat','error','MAE');
+    save('svr_rbf_Error0.mat','error','MAE');
+   % save('svr_poly_Error0.mat','error','MAE');   
 end
 
 if if_test_image == 1
     where = 'morph_small';    
     names1 = dir([where '/test_images/*.jpg']);    
-    image_num = length(names1)
+    image_num = length(names1);
     error = zeros(image_num,1);
     for i = 1:image_num
 		tic;
