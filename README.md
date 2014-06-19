@@ -1,15 +1,9 @@
-Age_Estimation_via_fastAAMs
+Age Estimation based on Support Vector Regression	
 ===========================
 machine learning homework: Age Estimation
 
-Project
-.....
+#Code Description#
 
-	Age Estimation based on Support Vector Regression	
-
-
-Code Description
--------
 the function interface (ageestimation.m): 
 
 	[ pred_age ] = ageestimation( image )  
