@@ -19,7 +19,8 @@ other code:
 	
 	3. test_image.m: test the function interface
 	
-	4. checknumericargs.m, ticstatus.m, tocstatus.m (just for convenience) : Used to display the progress of a long process
+	4. checknumericargs.m, ticstatus.m, tocstatus.m (just for convenience) : 
+		Used to display the progress of a long process
 	
 
 #Main Reference#
