@@ -7,12 +7,12 @@ ticstatusid = ticstatus('feature Extraction',[],10 );
 cnt = 0;
 feat_idx = 0;
 total_batch = 0;
-for i = 0:4 
+for i = 0:0 %0:4 
     file_dir = [where '/features_mat' num2str(i) '/'];
     ef_files = dir([file_dir '*.mat']);
     total_batch = total_batch + length(ef_files);
-end
-for i = 0:4    
+end 
+for i = 0:0 %0:4    
     file_dir = [where '/features_mat' num2str(i) '/'];
     ef_files = dir([file_dir '*.mat']);
     

@@ -224,7 +224,7 @@ for cnt = 1:length(names1)
     end;
     if(mod(cnt,200)==0)
         feature_batch = feature_batch + 1;
-        save(['./',where,'/features_mat/','ExtractedFeatures_',num2str(feature_batch),'.mat'],'ExtractedFeatures');
+        save(['./',where,'/features_mat0/','ExtractedFeatures_',num2str(feature_batch),'.mat'],'ExtractedFeatures');
         clear ExtractedFeatures;
         images_idx = 0;
         ExtractedFeatures = struct('name', [], 'scl', [], 'trans', [], 'features', []);
