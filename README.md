@@ -67,6 +67,8 @@ Set `is_svmtrain == 1` and set `svm_type= 0 or 1 or 2` to train a svr model.
 Set `is_svmtest == 1`  to test the model.
 
 
+## test images 
+
 **test_images.m** 
 
 This script predicts the age from images.
