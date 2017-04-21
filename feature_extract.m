@@ -1,5 +1,8 @@
-function [features] = feature_extract(input_image)
+function [feature] = feature_extract(input_image)
     
+% input: N x M x 3 or N x M gray images
+% output: 200 x 1
+
     load cAAM.mat;
     load meanscl.mat;
     load meantrans.mat;
@@ -12,7 +15,7 @@ function [features] = feature_extract(input_image)
 
     faceDetector = vision.CascadeObjectDetector();
     bbox= step(faceDetector, input_image);
-    features = [];
+    feature = [];
     num_of_scales_used = length(cAAM.scales);
     num_of_iter = [50 50];
     
@@ -92,6 +95,6 @@ function [features] = feature_extract(input_image)
         end
         Iw = warp_image(cAAM.coord_frame{ii}, current_shape*sc(ii), input_image);
         I = Iw(:); I(ind_out) = [];
-        features = A'*(I - A0);
+        feature = A'*(I - A0);
     end       
 end

@@ -1,9 +1,9 @@
 clear all; close all; 
-is_hist_age = 1;
-is_partition_dataset = 1;
+is_hist_age = 0;
+is_partition_dataset = 0;
 % is_knntrain = 0;
 % is_knntest = 0;
-is_svmtrain = 1; 
+is_svmtrain = 0; 
 
 % 0 svm_mixed
 % 1 svr rbf
@@ -11,7 +11,7 @@ is_svmtrain = 1;
 svm_type = 2; 
 
 is_svmtest = 1;
-is_test_image = 0;
+
 
 addpath funtions;
 addpath svm_func;
@@ -197,24 +197,6 @@ if is_svmtest == 1
     plot(0:length(cuml_score)-1,cuml_score);
     title(['MAE = ',num2str(MAE)]);
 end
-
-if is_test_image == 1
-    names1 = dir('test_images/*.jpg');    
-    image_num = length(names1);
-    error = zeros(image_num,1); 
-    for i = 1:image_num
-		tic;
-        input_image = imread(['test_images/' names1(i).name]);
-        trueage = str2num(names1(i).name(end-5:end-4));        
-        pred_age = ageestimation(input_image);
-        error(i) = abs(pred_age-trueage);
-		toc;
-    end
-    hist(error);
-    MAE = mean(error);
-    title(['MAE = ',num2str(MAE)]);
-end
-
 
 
 
