@@ -69,13 +69,13 @@ Set `is_svmtest == 1`  to test the model.
 
 ## test images 
 
-**test_images.m** 
-
-This script predicts the age from images.
+**test_images.m** script predicts the age from images.
 
 
 
-**Report** is given: age_estimation_report.pdf
+## Report
+
+REPORT is given: age_estimation_report.pdf
 
 
 ## Reference
