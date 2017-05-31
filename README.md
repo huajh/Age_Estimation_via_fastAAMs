@@ -75,7 +75,7 @@ Set `is_svmtest == 1`  to test the model.
 
 ## Report
 
-REPORT is given: (age_estimation_report.pdf}[https://github.com/huajh/Age_Estimation_via_fastAAMs/blob/master/age_estimation_report.pdf]
+REPORT is given: (age_estimation_report.pdf)[https://github.com/huajh/Age_Estimation_via_fastAAMs/blob/master/age_estimation_report.pdf]
 
 
 ## Reference
